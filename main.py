@@ -2433,46 +2433,19 @@ def read_pkl_file(file_path):
     return data
 
 
-
-
 DO_SAVE_LOG = False
 ITERATIONS = 10
 DOTESTFORMULA = 0
 
-
-aug_params_test = NoAugment() #NoAugment
-data_params_test = data_Versuch_3_CMX_prozess() #data_Versuch_quicktest
-ML_params_test = NN_Cheap() #Retrain_NN_Normal
+aug_params_test = NoAugment() 
+data_params_test = data_Versuch_3_CMX_prozess() 
+ML_params_test = NN_Cheap() 
 data_params_test.target_channels = ['cur_x']
-#run_testfunctions(data_params_test, aug_params_test, ML_params_test, additional_descriptor, iterations = ITERATIONS,augment_before_va = True, do_save_log = False, do_plot = False, plot_average_predictions = False)
-data_params_test.target_channels = ['cur_y']
+run_testfunctions(data_params_test, aug_params_test, ML_params_test, additional_descriptor, iterations = ITERATIONS,augment_before_va = True, do_save_log = False, do_plot = False, plot_average_predictions = False)
+#data_params_test.target_channels = ['cur_y']
 #run_testfunctions(data_params_test, aug_params_test, ML_params_test, additional_descriptor, iterations = ITERATIONS,augment_before_va = True, do_save_log = False, do_plot = False, plot_average_predictions = False)
 #data_params_test.target_channels = ['cur_z']
 #run_testfunctions(data_params_test, aug_params_test, ML_params_test, additional_descriptor, iterations = ITERATIONS,augment_before_va = True, do_save_log = False, do_plot = False, plot_average_predictions = False)
 #data_params_test.target_channels = ['cur_sp']
 #run_testfunctions(data_params_test, aug_params_test, ML_params_test, additional_descriptor, iterations = ITERATIONS,augment_before_va = True, do_save_log = False, do_plot = False, plot_average_predictions = False)
 
-#NoAugment()
-#MagnitudeWarp()
-#Noise()
-#RandomDelete()
-#TimeWarp()
-#WindowWarp()
-
-
-#self.aug1arg2 = 3 #Method of dataset compilation. 1 = winner takes all, 2 = linear for all > 0, 3 = quadratic for all > 0
-aug_params_test = NoAugment()
-#run_testfunctions(data_params_test, aug_params_test, ML_params_test, additional_descriptor, iterations = ITERATIONS, augment_before_va = True, do_save_log = DO_SAVE_LOG, do_plot = False, plot_average_predictions = False)
-
-#aug_params_test.aug1arg2 = 1
-#run_full_tests_process_CMX(aug_params_test, additional_descriptor, augment_before_va = True, do_save_log=DO_SAVE_LOG, do_plot = False, plot_average_predictions = False, argfinder_mode = False)#Reduced to only 2 and 4
-#
-#aug_params_test.aug1arg2 = 2
-#run_full_tests_process_CMX(aug_params_test, additional_descriptor, augment_before_va = True, do_save_log=DO_SAVE_LOG, do_plot = False, plot_average_predictions = False, argfinder_mode = False)#Reduced to only 2 and 4
-
-#comment
-#TODO: 
-# Wenn twoTimesOrig (mit mindestens X) runs (z.B. 10) ausgeführt wird, dann Ergebnisse in einer datei abspeichern
-# Wenn andere Augmentation gerunnt wird, dann suche nach Origergebnissen.
-    # gefunden: Vergleich, speichern des Vergleichs in Testausgabe
-    # nicht gefunden: Textausgabe, dass nicht gefunden. Abspeichern von -999 in Testausgabe
